@@ -22,14 +22,27 @@ The core engine dissects sequences across **6 advanced mathematical dimensions**
 ## 🎭 AI-Driven Automated Classification
 
 Based on the combined 37 features, the pipeline automatically assigns a complex behavioral verdict to each sequence:
-* **Absolute Crystalline Trend:** (цифры тупо растут вверх, как твои долги по учебе/работе) Perfect linear/exponential growth with ultra-low permutation entropy.
-* **Cosmic Swirling Attractor:** (просто набор цифр, которые по спирали уныло сходятся к нулю) Deep 3D orbital trajectory with fading Z-axis variance and extreme rotational force.
-* **Hyper-Coral of the Higher Order:** (полная нечитаемая фигня и каша, в которой даже ИИ ничего не понял) High-entropy multi-dimensional complex structures.
-* **Tectonic Shift / System Failure:** (все сломалось, данные улетели в стратосферу, мы все ...) Extreme step anomalies or massive skewness.
-* **High-Entropy White Noise:** (шум телевизора без антенны, полезности ноль) High spectral entropy coupled with a low Hurst exponent.
-* **Natural Benford Law:** (все честно, как в бухгалтерии у твоей мамы, никто ничего не дорисовывал) Sequences conforming perfectly to logarithmic first-digit distribution.
+* **Absolute Crystalline Trend:** *(Linear / Exponential Growth)* — Perfect linear/exponential growth with ultra-low permutation entropy.
+* **Cosmic Swirling Attractor:** *(Damped 3D Spiral)* — Deep 3D orbital trajectory with fading Z-axis variance and extreme rotational force.
+* **Hyper-Coral of the Higher Order:** *(Structured Chaos)* — High-entropy multi-dimensional complex structures.
+* **Tectonic Shift / System Failure:** *(Critical Anomaly)* — Extreme step anomalies or massive skewness.
+* **High-Entropy White Noise:** *(Pure Random Noise)* — High spectral entropy coupled with a low Hurst exponent.
+* **Natural Benford Law:** *(Logarithmic Distribution)* — Sequences conforming perfectly to logarithmic first-digit distribution.
 
 ---
+
+## 🎭 Automated Sequence Classification
+
+The pipeline uses 37 topological and statistical features to classify integer sequences:
+
+*   **Absolute Crystalline Trend** *(Linear / Exponential Growth)* — A predictable monotonic progression with ultra-low permutation entropy.
+*   **Cosmic Swirling Attractor** *(Damped 3D Spiral)* — A 3D orbital trajectory with decaying Z-axis variance and rotational vector force.
+*   **Hyper-Coral of the Higher Order** *(Structured Chaos)* — High-entropy, multi-dimensional structures possessing hidden internal topology.
+*   **Tectonic Shift / System Failure** *(Critical Anomaly)* — Severe step anomalies indicating a radical shift in sequence behavior.
+*   **High-Entropy White Noise** *(Pure Random Noise)* — High spectral entropy and low Hurst exponent with zero actionable information.
+*   **Natural Benford Law** *(Logarithmic Distribution)* — Series fitting the logarithmic first-digit distribution, confirming unmanipulated data.
+
+
 
 ## 🚀 Performance & Architecture
 
