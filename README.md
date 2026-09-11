@@ -27,7 +27,7 @@ Based on the combined 37 features, the pipeline automatically assigns a complex 
 * **Hyper-Coral of the Higher Order:** (полная нечитаемая фигня и каша, в которой даже ИИ ничего не понял) High-entropy multi-dimensional complex structures.
 * **Tectonic Shift / System Failure:** (все сломалось, данные улетели в стратосферу, мы все ...) Extreme step anomalies or massive skewness.
 * **High-Entropy White Noise:** (шум телевизора без антенны, полезности ноль) High spectral entropy coupled with a low Hurst exponent.
-* **Natural Benford Law:** Sequences conforming perfectly to logarithmic first-digit distribution.
+* **Natural Benford Law:** (все честно, как в бухгалтерии у твоей мамы, никто ничего не дорисовывал) Sequences conforming perfectly to logarithmic first-digit distribution.
 
 ---
 
