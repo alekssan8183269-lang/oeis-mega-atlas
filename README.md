@@ -22,11 +22,11 @@ The core engine dissects sequences across **6 advanced mathematical dimensions**
 ## 🎭 AI-Driven Automated Classification
 
 Based on the combined 37 features, the pipeline automatically assigns a complex behavioral verdict to each sequence:
-* **Absolute Crystalline Trend:** Perfect linear/exponential growth with ultra-low permutation entropy.
-* **Cosmic Swirling Attractor:** Deep 3D orbital trajectory with fading Z-axis variance and extreme rotational force.
-* **Hyper-Coral of the Higher Order:** High-entropy multi-dimensional complex structures.
-* **Tectonic Shift / System Failure:** Extreme step anomalies or massive skewness.
-* **High-Entropy White Noise:** High spectral entropy coupled with a low Hurst exponent.
+* **Absolute Crystalline Trend:** (цифры тупо растут вверх, как твои долги по учебе/работе) Perfect linear/exponential growth with ultra-low permutation entropy.
+* **Cosmic Swirling Attractor:** (просто набор цифр, которые по спирали уныло сходятся к нулю) Deep 3D orbital trajectory with fading Z-axis variance and extreme rotational force.
+* **Hyper-Coral of the Higher Order:** (полная нечитаемая фигня и каша, в которой даже ИИ ничего не понял) High-entropy multi-dimensional complex structures.
+* **Tectonic Shift / System Failure:** (все сломалось, данные улетели в стратосферу, мы все ...) Extreme step anomalies or massive skewness.
+* **High-Entropy White Noise:** (шум телевизора без антенны, полезности ноль) High spectral entropy coupled with a low Hurst exponent.
 * **Natural Benford Law:** Sequences conforming perfectly to logarithmic first-digit distribution.
 
 ---
