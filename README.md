@@ -2,6 +2,8 @@
 
 высокоточный Цифровой Профайлер (или Спектрометр математических структур), расширили базу теперь не 37 данных вытаскиваем а более 100+ в таблицу. пострадала скорость с 14000тысяч рядов до 800 в минуту.
 
+Спектрометр умеет не только анализировать OEIS, но и генерировать идеальные синтетические обучающие выборки для 8 видов апериодических моноплиток (включая Смитовские Hat и Spectre).
+
 ---
 
 A high-performance mathematical pipeline designed for the comprehensive extraction of **37 topological, statistical, and chaotic metrics** from numerical series. It transforms one-dimensional sequences into multidimensional trajectories and applies advanced mathematical filters to classify data into unique behavioral archetypes.
