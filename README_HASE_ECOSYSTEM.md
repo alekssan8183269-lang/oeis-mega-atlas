@@ -92,10 +92,10 @@ If you utilize this synthetic generator or its formatted output data frames in p
 
 ```bibtex
 @software{hase_ecosystem_2026,
-  author = {Alekssan},
-  title = {HASE v6.0: Synthetic Multi-Domain AI-Training Data Generation Ecosystem for Non-Linear Dynamics and Quantum Mathematics},
-  url = {https://github.com},
-  version = {6.0},
+  author = {Aleksandr Moiseenko},
+  title = {HASE v1.0: Synthetic Multi-Domain AI-Training Data Generation Ecosystem for Non-Linear Dynamics and Quantum Mathematics},
+  url = {https://github.com/alekssan8183269-lang/oeis-mega-atlas},
+  version = {1.0},
   year = {2026}
 }
 ```
