@@ -1,5 +1,9 @@
 # 🛸 OEIS Mega Atlas: Nonlinear & Statistical Sequence Analyzer
 
+высокоточный Цифровой Профайлер (или Спектрометр математических структур), расширили базу теперь не 37 данных вытаскиваем а более 100+ в таблицу. пострадала скорость с 14000тысяч рядов до 800 в минуту.
+
+---
+
 A high-performance mathematical pipeline designed for the comprehensive extraction of **37 topological, statistical, and chaotic metrics** from numerical series. It transforms one-dimensional sequences into multidimensional trajectories and applies advanced mathematical filters to classify data into unique behavioral archetypes.
 
 Optimized to run safely on budget hardware (e.g., Core i5, 8GB RAM) using strict memory-safe batch processing.
