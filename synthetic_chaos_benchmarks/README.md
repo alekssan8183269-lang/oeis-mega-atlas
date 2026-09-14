@@ -47,6 +47,22 @@ To the naked eye or linear regressions, all 980 rows look like identical logarit
   * **Ring 5 (Phi-Shifted Log):** Constant translation via the Golden Ratio (\(1.618 \cdot \ln(\vert{}x + 25.0\vert{} + \epsilon)\)).
   * **Ring 6 (Feedback Log Loop):** Self-referential iterative reduction (\(x - 12.0 \cdot \ln(\vert{}x\vert{} + \epsilon)\)).
 
+### 3. Chromatic Noise Cascade Generator (`generator_chromatic_noise_rings.py`)
+This generator is the ultimate test of an analytical system's capability to untangle real-world multi-spectral physical data. Instead of treating colored noise as an external destructive factor, this engine uses **colored noises as structural building blocks** interwoven with non-linear deterministic functions.
+
+It creates sequence structures mirroring natural and artificial phenomena (e.g., neural EEG signals, deep-ocean turbulence, or highly volatile cryptocurrency order books) where multiple noise spectra coexist simultaneously.
+
+* **The 7 Chromatic & Mathematical Rings:**
+  * **Ring 0 (Red Noise / Brownian):** Integrates strong physical memory and macro-trends via a cumulative brownian walk (\(1/f^2\) energy distribution).
+  * **Ring 1 (Log-Scaling):** Forces a deterministic non-linear compression block (\(\ln(\vert{}x\vert{})\)).
+  * **Ring 2 (Blue Noise):** Inject high-frequency violences via differentiated white noise, mimicking high-pitch hardware static (\(f\) energy distribution).
+  * **Ring 3 (Pink Noise / Flicker):** Applies the universal \(1/f\) natural fractal harmony resonance, introducing long-term balanced cross-correlations.
+  * **Ring 4 (Black Noise / Intermittent):** Simulates catastrophic system failures. It injects severe, isolated macroscopic anomalies (spikes between \(15\sigma\) and \(30\sigma\)) separated by long periods of low-variance dormancy.
+  * **Ring 5 (Golden Ratio Warp):** Applies non-linear power warping stabilized by the Phi constant (\(1.618 \cdot \vert{}x\vert{}^{1.05}\)).
+  * **Ring 6 (Modular White Chaos):** Combines discrete lattice shifts with pure uncorrelated zero-memory Shannon entropy (\(White\ Noise\)).
+
+* **Target Evaluation Metrics:** This dataset tests if your profiler can read through conflicting noise signatures. The *Hurst Exponent* must separate the heavy memory of Red Rings from Pink Rings, while the *FFT Spectral Entropy* and *Permutation Entropy* must accurately pinpoint at which stage the high-frequency Blue or catastrophic Black rings were injected.
+
 ---
 
 ## 🔧 Data Customization & Parameter Tuning
