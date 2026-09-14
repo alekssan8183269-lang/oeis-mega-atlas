@@ -6,6 +6,30 @@ Unlike standard benchmark generators that rely on simple "Signal + Noise" archit
 
 ---
 
+## 🧱 The Ultimate Interactive LEGO-Chaos Constructor (`lego_chaos_constructor.py`)
+
+This is the flagship orchestrator of the benchmark suite. Instead of hardcoded equations, it provides a **Modular Brick-Based Interface (LEGO System)** allowing researchers to dynamically snap together multi-spectral physical noises, non-linear algebraic operators, and multidimensional geometric area matrices into custom 5-stage transformation cascades.
+
+### 🧰 Available LEGO Brick Inventory (ID Matrix):
+* **Pure Math Blocks [0-6]:** `0: Div20`, `1: NatLog`, `2: SinWave`, `3: GoldenRatio`, `4: PowerWarp`, `5: ModShift`, `6: CosWave`
+* **Advanced Log Bricks [7-9]:** `7: Log10`, `8: Log2`, `9: LogSin`
+* **Chromatic Noises [10-13]:** `10: RedNoise (Brownian Memory)`, `11: BlueNoise (High-Pitch Static)`, `12: PinkNoise (Natural Fractal)`, `13: BlackNoise (Macroscopic Catastrophe Spike)`
+* **Spatial Geometry Areas [14-15]:** `14: Geo_ParaTrap (Parallelograms & Trapezoids)`, `15: Geo_RhomRect (Rhombuses & Rectangles)`
+
+### 🛠 How to Build Your Custom Universe:
+Open the script and edit the execution array at the bottom. Pass exactly 5 brick IDs into the `lego_slots` vector:
+```python
+run_lego_experiment(
+    lego_slots = [3, 15, 10, 11, 4], # GoldenRatio -> RhomRect Area -> RedNoise -> BlueNoise -> PowerWarp
+    sequence_length = 100,            # Change resolution of 1D lines
+    mutation_percent = 1.5,           # Inject customized stochastic distortion bounds
+    filename = "your_custom_chaos.csv"
+)
+```
+The constructor will automatically process a 28-class shifted tensor, execute memory-safe operations, and generate a structural matrix equipped with high-precision ground-truth metadata tags for downstream clustering validation.
+
+---
+
 ## 🧠 Scientific Rationale & Core Concepts
 
 In real-world complex systems (e.g., financial market micro-structures, quantum vortex dynamics, biological signal pathways), fundamental mathematical laws rarely appear in isolation. They are typically nested, feedback-looped, and obscured by environmental noise. 
