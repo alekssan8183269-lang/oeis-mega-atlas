@@ -63,6 +63,26 @@ It creates sequence structures mirroring natural and artificial phenomena (e.g.,
 
 * **Target Evaluation Metrics:** This dataset tests if your profiler can read through conflicting noise signatures. The *Hurst Exponent* must separate the heavy memory of Red Rings from Pink Rings, while the *FFT Spectral Entropy* and *Permutation Entropy* must accurately pinpoint at which stage the high-frequency Blue or catastrophic Black rings were injected.
 
+### 4. Quadrilateral Area Cascade Generator (`generator_quadrilateral_area_rings.py`)
+This generator establishes a direct topological bridge between spatial geometry, aperiodic tilings (like *Hat* and *Spectre* clusters), and 1D algebraic sequences. Instead of equations, the core backbone of these sequences is grown from the **exact vector areas of 4 alternating multi-scale quadrilaterals** generated dynamically in 2D space.
+
+* **The 4 Geometric Structural Foundations:**
+  * **Parallelogram:** Area generated via dynamic base-height vector scaling.
+  * **Trapezoid:** Area calculated via asymmetric multi-base lattice parameters.
+  * **Rhombus:** Grown via orthogonal diagonal intersections.
+  * **Rectangle:** Built from classic length-width boundary limits.
+
+* **The 7 Geometric Transformation Rings:**
+  * **Ring 0 (Spatial Compression):** Linear area deflation (\(\frac{x}{25.0}\)).
+  * **Ring 1 (Log-Warping):** Logarithmic distortion of the continuous geometric fabric (\(\ln(\vert{}x\vert{})\)).
+  * **Ring 2 (Sinusoidal Grating):** Wave-like torsion mimicking crystalline lattice shifts (\(x + 20 \cdot \sin(x)\)).
+  * **Ring 3 (Golden Ratio Modular Scale):** Proportional dilation using the aperiodic tiling constant (\(x \cdot 1.618\)).
+  * **Ring 4 (Power Deformation):** Monotonic vector extension (\(\vert{}x\vert{}^{1.03}\)).
+  * **Ring 5 (Lattice Quantization):** Discrete mosaic step shift representing periodic grid boundaries (\(x + 4 \cdot (x \pmod 9)\)).
+  * **Ring 6 (Cos-Interference):** Quasi-periodic aperiodic friction noise to obscure regular patterns.
+
+* **Target Evaluation Metrics:** This benchmark tests the engine's capability to extract multidimensional spatial symmetries from 1D data. The *Takens' 3D Snake Geometry* analyzer should reconstruct the structural boundaries of the original geometric shapes, proving that the profiler can reverse-engineer spatial dimensions directly from raw number distributions.
+
 ---
 
 ## 🔧 Data Customization & Parameter Tuning
