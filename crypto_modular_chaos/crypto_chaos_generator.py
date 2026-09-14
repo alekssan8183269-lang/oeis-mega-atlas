@@ -7,12 +7,12 @@ import pandas as pd
 # =====================================================================
 # НАСТРОЙКИ СКОРОСТНОГО КРИПТО-КОНВЕЙЕРА
 # =====================================================================
-SEQ_LENGTH = 110            # Длина хаотической крипто-орбиты
-ROWS_PER_PRIME = 35         # Сколько уникальных ключей генерировать на модуль
-OUTPUT_FILE = "crypto_modular_chaos_light_dataset.csv"
+SEQ_LENGTH = 110            # Длина финансового временного ряда
+ROWS_PER_MODEL = 35         # Количество симуляций на каждую рыночную модель
+OUTPUT_FILE = "crypto_market_volatility_dataset.csv"
 
-# Наборы криптографических модулей (большие простые числа и алгоритмы)
-ALGO_TYPES = ["Modular_Elliptic_31231", "LCM_Asymmetric_65537", "Fermat_Prime_Fold", "Mersenne_Pseudo_Chaos"]
+# Новые паттерны крипто-рынка вместо криптографических модулей
+MARKET_MODELS = ["Crypto_Bull_Trend", "Crypto_Bear_Crash", "HFT_Market_Flat", "Whale_Pump_Chaos"]
 
 def safe_num(val, ndigits=4):
     """Защита ячеек от автоформата Excel"""
@@ -20,58 +20,77 @@ def safe_num(val, ndigits=4):
     except: return f'="{val}"'
 
 # =====================================================================
-# ШАГ 1: ГЕНЕРАТОР МОДУЛЯРНЫХ ОРБИТ И КРИПТОГРАФИЧЕСКОГО ХАОСА
+# ШАГ 1: ГЕНЕРАТОР МОДЕЛЕЙ ВОЛАТИЛЬНОСТИ КРИПТО-РЫНКА
 # =====================================================================
-def generate_crypto_modular_chaos(algo_type, length, row_idx):
-    """Генерирует псевдохаотические орбиты на конечных алгебраических полях"""
+def generate_crypto_market_series(model_type, length, row_idx):
+    """Генерирует временные ряды, моделирующие различные состояния крипто-рынка"""
     np.random.seed(int(time.time() * 1000) % 500000 + row_idx * 41)
     
     time_series = []
     
-    if algo_type == "Modular_Elliptic_31231":
-        # Итерация кубического многочлена (тип эллиптической кривой) по модулю P
-        P = 31231
-        x = np.random.randint(100, 5000)
-        a, b = 7, 11
-        for _ in range(length):
-            x = (x**3 + a*x + b) % P
-            time_series.append(float(x) / P) # Нормируем к 0-1
+    if model_type == "Crypto_Bull_Trend":
+        # Бычий тренд с логарифмическим ростом и ценовыми откатами
+        price = 100.0
+        for t in range(length):
+            # Логарифмический дрейф вверх + случайное блуждание
+            drift = 1.5 * np.log10(t + 2)
+            shock = np.random.normal(0.2, 1.2)
+            price += drift + shock
+            time_series.append(max(0.1, price))
             
-    elif algo_type == "LCM_Asymmetric_65537":
-        # Алгоритм на основе простого числа Ферма F4
-        P = 65537
-        x = np.random.randint(500, 60000)
-        multiplier = 48271
-        for _ in range(length):
-            x = (x * multiplier) % P
-            time_series.append(float(x) / P)
+    elif model_type == "Crypto_Bear_Crash":
+        # Медвежий обвал: каскадная паника, экспоненциальное падение
+        price = 1000.0
+        for t in range(length):
+            # Паника усиливается со временем (каскадный эффект)
+            panic_factor = 0.01 * min(t, 40)
+            shock = np.random.normal(-2.0 - panic_factor, 3.0)
+            # Изредка отскоки "дохлой кошки"
+            if np.random.rand() > 0.85:
+                shock += np.random.exponential(5.0)
+            price += shock
+            # Имитация ликвидаций при сильном падении
+            if price < 500 and np.random.rand() > 0.7:
+                price *= 0.85 
+            time_series.append(max(0.1, price))
             
-    elif algo_type == "Fermat_Prime_Fold":
-        # Двумерное скручивание знаков по модулю 10007
-        P = 10007
-        x = np.random.randint(10, P)
+    elif model_type == "HFT_Market_Flat":
+        # Высокочастотный шум торговых роботов во флэте (Mean Reversion)
+        base_price = 50.0
+        price = base_price
         for _ in range(length):
-            x = (x**2 - 2) % P
-            if x == 0: x = np.random.randint(10, P)
-            time_series.append(float(x) / P)
+            # Возврат к среднему значению + микрошум
+            drift = 0.3 * (base_price - price)
+            noise = np.random.normal(0, 0.5)
+            price += drift + noise
+            time_series.append(max(0.1, price))
             
-    else: # Mersenne_Pseudo_Chaos
-        # Псевдо-мерсеннов узор со сдвигом битов (XOR-shift аналог)
-        P = 524287 # 2^19 - 1
-        x = np.random.randint(1000, P)
-        for _ in range(length):
-            x ^= (x << 13) % P
-            x ^= (x >> 17) % P
-            x ^= (x << 5) % P
-            time_series.append(float(x % 10000) / 10000.0)
+    else: # Whale_Pump_Chaos
+        # Манипуляции крупных китов: резкий вертикальный памп и жесткий дамп
+        price = 10.0
+        pump_start = length // 4
+        dump_start = length // 2
+        for t in range(length):
+            if t < pump_start:
+                # Накопление позиции (тихий флэт)
+                shock = np.random.normal(0, 0.1)
+            elif pump_start <= t < dump_start:
+                # Вертикальный агрессивный памп
+                shock = np.random.exponential(4.0) + np.random.normal(1.0, 0.5)
+            else:
+                # Слив об толпу (жёсткий дамп) и хаос
+                shock = -np.random.exponential(5.0) - np.random.normal(1.5, 1.0)
+            
+            price += shock
+            time_series.append(max(0.1, price))
 
-    # Накладываем 1% физического шума искажения канала связи (эмуляция перехвата сырого сигнала)
+    # Накладываем 1% биржевого шума (проскальзывание ордеров, спреды)
     raw_array = np.array(time_series, dtype=float)
-    noise_layer = np.random.normal(0, 0.01, size=length)
+    noise_layer = np.random.normal(0, np.mean(raw_array) * 0.01, size=length)
     return np.abs(raw_array + noise_layer)
 
 # =====================================================================
-# ШАГ 2: КРИПТО-АНАЛИЗАТОР ( 9 МЕТРИК)
+# ШАГ 2: КРИПТО-АНАЛИЗАТОР (9 МЕТРИК) — БЕЗ ИЗМЕНЕНИЙ
 # =====================================================================
 def analyze_crypto_light(seq_id, algo_name, seq):
     n_len = len(seq)
@@ -86,14 +105,12 @@ def analyze_crypto_light(seq_id, algo_name, seq):
     else: ac_lag1 = 0.0
 
     # 8-я метрика: Простейший маркер симметрии (энтропия знаков приращений)
-    # Показывает, насколько сбалансированы шаги вверх-вниз в крипто-потоке
     sign_profile = np.where(diffs > 0, 1, 0)
     p1 = np.sum(sign_profile) / max(1, len(sign_profile))
     p0 = 1.0 - p1
     binary_sign_entropy = float(-(p1 * math.log2(p1 + 1e-12) + p0 * math.log2(p0 + 1e-12)))
 
     # 9-я метрика: Девиация первого знака (Лайт-тест закона Бенфорда)
-    # Показывает скрытые перекосы в мантиссе модулярных генераторов
     first_digits = [int(str(abs(x)).replace('.', '').lstrip('0')[0]) for x in seq if abs(x) > 1e-4]
     if first_digits:
         counts = np.bincount(first_digits, minlength=10)[1:10]
@@ -107,7 +124,7 @@ def analyze_crypto_light(seq_id, algo_name, seq):
 
     return {
         "ID": f'="{seq_id}"',
-        "Крипто_Алгоритм": algo_name,
+        "Рыночная_Модель": algo_name,
         "Метрика_1_Длина": safe_num(n_len, 0),
         "Метрика_2_Среднее": safe_num(mean_val, 4),
         "Метрика_3_Станд_Отклонение": safe_num(std_val, 4),
@@ -124,35 +141,36 @@ def analyze_crypto_light(seq_id, algo_name, seq):
 # =====================================================================
 if __name__ == "__main__":
     print("="*60)
-    print("🛸 HASE v6.0-CRYPTO: ЗАПЕЧАТЫВАНИЕ КРИПТОГРАФИЧЕСКОГО ХАОСА")
+    print("🛸 HASE v1.0-FINANCE: СИМУЛЯЦИЯ РЫНОЧНОЙ ВОЛАТИЛЬНОСТИ")
     print("="*60)
     
     mega_dataset = []
     start_time = time.time()
     
-    for a_type in ALGO_TYPES:
-        print(f"🪸 Генерируем модулярные орбиты для: {a_type}...")
-        for i in range(ROWS_PER_PRIME):
-            row_id = f"{a_type.upper()}_CRYPTO_{i+1}"
+    for m_type in MARKET_MODELS:
+        print(f"📈 Симулируем ценовые ряды для паттерна: {m_type}...")
+        for i in range(ROWS_PER_MODEL):
+            row_id = f"{m_type.upper()}_MARKET_{i+1}"
             
-            # 1. Генерируем псевдослучайную криптографическую траекторию
-            raw_seq = generate_crypto_modular_chaos(a_type, SEQ_LENGTH, row_idx=i)
+            # 1. Генерируем реальную экономическую модель крипто-рынка
+            raw_seq = generate_crypto_market_series(m_type, SEQ_LENGTH, row_idx=i)
             
-            # 2. Вычисляем 9 базовых фич
-            analysis = analyze_crypto_light(row_id, a_type, raw_seq)
-            analysis["Сырой_Крипто_Поток"] = ", ".join(map(lambda x: str(round(x, 4)), raw_seq))
+            # 2. Вычисляем 9 базовых фич (они перемалывают ряды без изменений)
+            analysis = analyze_crypto_light(row_id, m_type, raw_seq)
+            analysis["Сырой_Финансовый_Поток"] = ", ".join(map(lambda x: str(round(x, 4)), raw_seq))
             
             mega_dataset.append(analysis)
             
-        print(f"   📊 Алгоритм {a_type} успешно отработал.")
+        print(f"   📊 Модель {m_type} успешно обработана.")
 
     # Запись результатов в файл
     df = pd.DataFrame(mega_dataset)
     df.to_csv(OUTPUT_FILE, index=False, sep=";", encoding="utf-8-sig")
     
     print("\n" + "="*60)
-    print(f"👑 КРИПТО-ПОЛЯНА СГЕНЕРИРОВАНнаа!")
-    print(f"📊 Всего сгенерировано: {len(df)} орбит по модулю простых чисел.")
+    print(f"👑 КРИПТО-МАРКЕТ СГЕНЕРИРОВАН!")
+    print(f"📊 Всего сгенерировано: {len(df)} финансовых рядов.")
     print(f"📂 Ищи файл: {OUTPUT_FILE}")
-    print(f"⏱️ Скорость процессора: {round(time.time() - start_time, 2)} сек.")
+    print(f"⏱️ Время симуляции: {round(time.time() - start_time, 2)} сек.")
     print("="*60)
+
